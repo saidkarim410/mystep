@@ -96,18 +96,19 @@ async function sendToTelegram(d) {
 async function sendToGoogleSheets(d) {
   if (!CONFIG.GOOGLE_SCRIPT_URL) return false;
   try {
+    const formData = new URLSearchParams();
+    formData.append("name", d.name);
+    formData.append("phone", "+998 " + d.phone);
+    formData.append("course", d.course);
+    formData.append("age", d.age || "");
+    formData.append("callTime", d.callTime || "");
+    formData.append("source", d.source);
+    formData.append("date", d.date);
+
     await fetch(CONFIG.GOOGLE_SCRIPT_URL, {
       method: "POST",
       mode: "no-cors",
-      body: JSON.stringify({
-        name: d.name,
-        phone: "+998 " + d.phone,
-        course: d.course,
-        age: d.age || "",
-        callTime: d.callTime || "",
-        source: d.source,
-        date: d.date,
-      }),
+      body: formData,
     });
     return true;
   } catch (e) {
