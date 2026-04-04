@@ -1,7 +1,7 @@
 const CONFIG = {
   TELEGRAM_BOT_TOKEN: "8613915198:AAGF1gIcGCWmbbeS7yxHNFbRMgp1sXAPbe0",
   TELEGRAM_CHAT_ID: "282412631",
-  GOOGLE_SCRIPT_URL: "", // Вставьте URL после настройки Google Apps Script
+  GOOGLE_SCRIPT_URL: "https://script.google.com/macros/s/AKfycbzo8yBsT06_tRqm0mRta2mz2eJ3mpmo2z8nkXPO2Tc4ckSE1uVckovv_0lO-YWd9yO13g/exec", 
 };
 
 // Header scroll

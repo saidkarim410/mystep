@@ -300,26 +300,5 @@
             <button class="modal-close" onclick="closeModal()">Отлично!</button>
         </div>
     </div>
-
-    <!--
-    ============================================================
-    ИНСТРУКЦИЯ: ПОДКЛЮЧЕНИЕ GOOGLE SHEETS
-    ============================================================
-    1. Создайте таблицу: https://sheets.new
-    2. Назовите лист "Заявки"
-    3. Заголовки A1–G1: Дата | Имя | Телефон | Курс | Возраст | Время звонка | Источник
-    4. Расширения → Apps Script → вставьте:
-
-    function doPost(e) {
-      var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('Заявки');
-      var data = JSON.parse(e.postData.contents);
-      sheet.appendRow([data.date, data.name, data.phone, data.course, data.age, data.callTime, data.source]);
-      return ContentService.createTextOutput(JSON.stringify({status:'ok'})).setMimeType(ContentService.MimeType.JSON);
-    }
-
-    5. Deploy → New Deployment → Web app → Execute as: Me, Access: Anyone
-    6. Скопируйте URL → вставьте в CONFIG.GOOGLE_SCRIPT_URL
-    ============================================================
-    -->
 </body>
 </html>
