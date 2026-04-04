@@ -64,14 +64,14 @@ function validateForm() {
 // Send to Telegram
 async function sendToTelegram(d) {
   const msg =
-    `New application - MyStep\n\n` +
-    `Name: ${d.name}\n` +
-    `Phone: +998 ${d.phone}\n` +
-    `Course: ${d.course}\n` +
-    `Age: ${d.age || "not specified"}\n` +
-    `Call time: ${d.callTime || "not specified"}\n` +
-    `Source: ${d.source}\n` +
-    `Date: ${d.date}`;
+    `📩 **New application - MyStep**\n\n` +
+    `👤 **Name:** ${d.name}\n` +
+    `📞 **Phone:** +998 ${d.phone}\n` +
+    `📚 **Course:** ${d.course}\n` +
+    `🎂 **Age:** ${d.age || "not specified"}\n` +
+    `⏰ **Call time:** ${d.callTime || "not specified"}\n` +
+    `🌐 **Source:** ${d.source}\n` +
+    `📅 **Date:** ${d.date}`;
   try {
     for (const id of CONFIG.TELEGRAM_CHAT_ID) {
       const r = await fetch(
